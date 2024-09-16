@@ -95,9 +95,19 @@ document.addEventListener('DOMContentLoaded', function () {
         if (isValid) {
             console.log("yes it is valid");
             // Store data in the array
-            let formData = { name, age, email, password, mobile };
+            let formData = {
+                name: name,
+                age: age,
+                email: email,
+                password: password,
+                mobile: mobile
+            };
             formDataArray.push(formData);
-            console.log(formDataArray);
+            // console.log(formDataArray);
+
+            localStorage.setItem("FormDataArray", JSON.stringify(formDataArray));
+            console.log(JSON.parse(localstorage.getItem("formDataArray")));
+
             alert('Form submitted successfully!');
 
             // Clear form fields
